@@ -15,9 +15,9 @@
                             "txt": "summary in french (much better than english!)"
                         }
                     ],
-                    "url": "https://raw.githubusercontent.com/Cyrille-de-Brebisson/CBScope/master/fwtst/Fake.FW",
+                    "url": "https://raw.githubusercontent.com/Cyrille-de-Brebisson/fwtst/master/Fake.FW",
                     "userVersion": "version 1.0 date",
-                    "version": 1
+                    "version": 1,
                     "updateFrom": 0
                 },
              ]
