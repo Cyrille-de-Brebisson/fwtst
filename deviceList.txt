@@ -1,0 +1,27 @@
+// This file contains the list of all the HPAC supported devices for which additional data is availalbe online.
+
+// in this format, we have 1 item per line. with no spaces at the begining of the line
+// note that any line that does NOT start by a known property will be ignored
+
+// Each device definition starts with:
+// device:internal_mame user facing name until end of line
+// Then, we will see a list of "properties" for said device.
+// At this point in time, we only support fw properties, but more might be added later.
+// a fw definition starts with:
+// device.fw:ver min_ver user_text_to_end_of_line
+// followed by a url definition
+// device.fw.url:url_to_end_of_line
+// and as many release notes as needed where "lang" is a 2 letter language specification
+// device.fw.note:lang user_text_to_end_of_line
+
+
+device::Fake Fake device for testing
+device.fw:1 0 some user string
+device.fw.url:https://raw.githubusercontent.com/Cyrille-de-Brebisson/fwtst/master/Fake.FW
+device.fw.note:en summary in english
+device.fw.note:fr Summary in french (much better than english!)"
+
+
+// new properties like this could be added later. device.manual:lang url_to_end_of_line
+
+autoUpdate:enable frequency last_update (enable: 0 or 1, frequency: 0-1 or 2 (daily, weekly, monthly) last_update is double)
