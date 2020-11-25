@@ -15,7 +15,7 @@
 // device.fw.note:lang user_text_to_end_of_line
 
 
-device:Fake Fake device for testing
+device:Fake Fake device for testing 
 device.fw:1 0 some user string
 device.fw.url:https://raw.githubusercontent.com/Cyrille-de-Brebisson/fwtst/master/Fake.FW
 device.fw.note:en summary in english
