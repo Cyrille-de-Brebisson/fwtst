@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Map with 2000 Markers</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Initialize the map
+  var map = L.map('map').setView([0, 0], 2); // Centered globally
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Load location data
+  fetch('locations.json')
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(location => {
+        L.marker([location.lat, location.lng])
+          .addTo(map)
+          .bindPopup(location.name);
+      });
+    })
+    .catch(error => console.error('Error loading locations:', error));
+</script>
+
+</body>
+</html>
